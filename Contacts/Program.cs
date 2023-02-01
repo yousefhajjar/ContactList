@@ -5,6 +5,7 @@ using DataAccess.Repositories;
 using Domain.Interface;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -19,6 +20,7 @@ builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.Requ
 builder.Services.AddControllersWithViews();
 builder.Services.AddScoped<IContactsRepository, ContactsRepository>();
 builder.Services.AddScoped<ContactsService>();
+//builder.Services.AddScoped<IContactsRepository, ContactsInFileRepository>(x => new ContactsInFileRepository("Data\\Contacts.json"));
 
 
 var app = builder.Build();

@@ -34,7 +34,6 @@ namespace Contacts.Controllers
             {
                 if (file != null)
                 {
-                    Console.WriteLine("file is not null");
                     string fileName = Guid.NewGuid().ToString() + Path.GetExtension(file.FileName);
                     string absolutePath = host.WebRootPath;
 
